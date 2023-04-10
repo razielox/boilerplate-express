@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 require('dotenv').config()
 app.use('/', (request, response, next) => {
-    console.log(request.method, request.path, request.ip)
+    console.log(`${request.method} ${request.path} - ${request.ip}`)
     next()
 })
 app.use("/public",express.static(__dirname + '/public'))
