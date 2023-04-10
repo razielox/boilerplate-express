@@ -18,6 +18,15 @@ app.get("/json", (request, response) => {
     
 })
 
+app.get("/now", (request, response, next) => {
+    request.time = new Date().toString()
+    next() 
+},
+    (request, response) => {
+        response.json({time: request.time})
+    
+})
+
 
 console.log("Hello World")
 
