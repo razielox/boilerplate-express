@@ -1,7 +1,10 @@
 let express = require('express');
 let app = express();
 require('dotenv').config()
+let bodyParser = require('body-parser')
 
+
+app.use(bodyParser.urlencoded({extended: false}))
 //middleware for check all the requests and log variables
 app.use('/', (request, response, next) => {
     console.log(`${request.method} ${request.path} - ${request.ip}`)
