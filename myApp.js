@@ -37,6 +37,16 @@ app.get('/:word/echo', (request,response) => {
     response.json({echo: request.params.word})
 })
 
+//router query parameters
+/**
+ * the same route is gonna have get and post method
+ * so this example is gona be chained with the app.route(path).get(handler).post(handler) ... etc
+ */
+app.route('/name')
+.get((request, response) => {
+    response.json({name: `${request.query.first} ${request.query.last}`})
+})
+
 
 console.log("Hello World")
 
