@@ -32,8 +32,9 @@ app.get("/now", (request, response, next) => {
         response.json({time: request.time})
 })
 
+//router parameters
 app.get('/:word/echo', (request,response) => {
-    response.json({word: request.params.word})
+    response.json({echo: request.params.word})
 })
 
 
