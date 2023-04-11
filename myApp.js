@@ -49,6 +49,9 @@ app.route('/name')
 .get((request, response) => {
     response.json({name: `${request.query.first} ${request.query.last}`})
 })
+.post((request, response) => {
+    response.json({name: `${request.body.first} ${request.body.last}`})
+})
 
 
 console.log("Hello World")
